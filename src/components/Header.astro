@@ -1,0 +1,76 @@
+---
+---
+<header>
+    <div class="container nav-container">
+        <a href="/" class="logo">
+            <img src="/images/logo.jpg" alt="Scripbox Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <a href="#" class="login-btn">Login</a>
+            <a href="#" class="cta-btn">Sign Up</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    header {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo img {
+        height: 28px;
+    }
+    nav ul {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+    }
+    nav a {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: var(--brand-orange);
+    }
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .login-btn {
+        font-weight: 500;
+        color: var(--text-light);
+    }
+    .cta-btn {
+        background-color: var(--brand-green);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
+    }
+    .cta-btn:hover {
+        opacity: 0.9;
+    }
+    /* Simple responsive for nav - a full hamburger menu is more complex */
+    @media (max-width: 992px) {
+        nav {
+            display: none;
+        }
+    }
+</style>
