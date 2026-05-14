@@ -1,4 +1,5 @@
 ---
+import { ButtonLink } from './ui/button';
 ---
 <header>
     <div class="container nav-container">
@@ -14,8 +15,8 @@
             </ul>
         </nav>
         <div class="actions">
-            <a href="#" class="login-btn">Login</a>
-            <a href="#" class="cta-btn">Sign Up</a>
+            <ButtonLink href="#" variant="ghost" size="sm">Login</ButtonLink>
+            <ButtonLink href="#" variant="default" size="sm">Sign Up</ButtonLink>
         </div>
     </div>
 </header>
@@ -50,22 +51,7 @@
     .actions {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
-    }
-    .login-btn {
-        font-weight: 500;
-        color: var(--text-light);
-    }
-    .cta-btn {
-        background-color: var(--brand-green);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 8px;
-        font-weight: 500;
-        transition: opacity 0.3s ease;
-    }
-    .cta-btn:hover {
-        opacity: 0.9;
+        gap: 1rem;
     }
     /* Simple responsive for nav - a full hamburger menu is more complex */
     @media (max-width: 992px) {

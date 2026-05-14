@@ -1,5 +1,6 @@
 ---
 // src/components/FeatureSection.astro
+import { ButtonLink } from './ui/button';
 const { title, description, imgSrc, imgAlt, imageSide = 'right' } = Astro.props;
 const isReversed = imageSide === 'left';
 ---
@@ -8,7 +9,7 @@ const isReversed = imageSide === 'left';
         <div class="feature-content">
             <h2>{title}</h2>
             <p>{description}</p>
-            <a href="#" class="feature-link">Start Free Planning &rarr;</a>
+            <ButtonLink href="#" variant="link" size="lg" className="feature-link">Start Free Planning &rarr;</ButtonLink>
             <div class="quote">
                 <blockquote>
                     "I was introduced to Scripbox by my friend and since then there is no looking back. One of the best apps for beginners who want to explore mutual funds. Simple and easy to use."
@@ -54,8 +55,6 @@ const isReversed = imageSide === 'left';
         margin-bottom: 1.5rem;
     }
     .feature-link {
-        color: var(--brand-orange);
-        font-weight: 500;
         display: inline-block;
         margin-bottom: 2rem;
     }

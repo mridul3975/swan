@@ -1,3 +1,4 @@
+import { type ReactNode } from "react"
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { cva, type VariantProps } from "class-variance-authority"
 
@@ -55,4 +56,27 @@ function Button({
   )
 }
 
-export { Button, buttonVariants }
+type ButtonLinkProps = Omit<ButtonPrimitive.Props, "render"> &
+  VariantProps<typeof buttonVariants> & {
+    href: string
+    children: ReactNode
+  }
+
+function ButtonLink({
+  href,
+  children,
+  ...props
+}: ButtonLinkProps) {
+  return (
+    <Button
+      render={(buttonProps) => (
+        <a {...buttonProps} href={href}>
+          {children}
+        </a>
+      )}
+      {...props}
+    />
+  )
+}
+
+export { Button, ButtonLink, buttonVariants }

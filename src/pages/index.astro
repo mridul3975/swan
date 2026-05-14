@@ -3,6 +3,7 @@
 import BaseLayout from '../components/BaseLayout.astro';
 import FeatureSection from '../components/FeatureSection.astro';
 import Header from '../components/Header.astro';
+import { ButtonLink } from '../components/ui/button';
 ---
 
 
@@ -20,8 +21,8 @@ import Header from '../components/Header.astro';
                         Invest in the best mutual funds.
                     </h1>
                     <div class="app-buttons">
-                        <a href="#"><img src="/images/app-store.svg" alt="Download on the App Store"></a>
-                        <a href="#"><img src="/images/play-store.svg" alt="Get it on Google Play"></a>
+                        <ButtonLink href="#" size="lg" className="app-button">Download on the App Store</ButtonLink>
+                        <ButtonLink href="#" variant="outline" size="lg" className="app-button">Get it on Google Play</ButtonLink>
                     </div>
                     <div class="stats">
                         <div>
@@ -99,11 +100,13 @@ import Header from '../components/Header.astro';
     }
     .app-buttons {
         display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
         margin-bottom: 3rem;
     }
-    .app-buttons img {
-        height: 45px;
+    .app-button {
+        min-width: 220px;
+        justify-content: center;
     }
     .stats {
         display: flex;
