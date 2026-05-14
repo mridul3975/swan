@@ -12,7 +12,7 @@ import { ButtonLink } from '../components/ui/button';
     
     <main>
         <!-- HERO SECTION -->
-        <section class="hero-section">
+        <section class="hero-section snap-slide mx-auto max-w-7xl justify-center">
             <div class="container hero-container">
                 <div class="hero-content">
                     <span class="eyebrow">Get complete investment advice in Scripbox app</span>
@@ -47,19 +47,8 @@ import { ButtonLink } from '../components/ui/button';
             </div>
         </section>
 
-        <section class="trust-bar">
-            <div class="container trust-grid">
-                <div>
-                    <span>Trusted by over</span>
-                    <strong>1 lakh Indians</strong>
-                </div>
-                <div>
-                    <span>Investment strategies shaped by expert advisors and data-backed insights.</span>
-                </div>
-            </div>
-        </section>
 
-        <section class="feature-cards">
+        <section class="feature-cards snap-slide">
             <div class="container cards-grid">
                 <article class="card">
                     <h3>Grow wealth.</h3>
@@ -79,15 +68,9 @@ import { ButtonLink } from '../components/ui/button';
             </div>
         </section>
 
-        <FeatureSection
-            title="Grow wealth."
-            description="Scripbox helps you select the right mix of funds to grow your wealth steadily. We continuously monitor and manage your portfolio to keep it on track."
-            imgSrc="/imgs/Feature 1 Phone Mockup.jpg"
-            imgAlt="Grow wealth screen"
-            imageSide="right"
-        />
+        <!-- FeatureSection removed here; moved into CTA section -->
 
-        <section class="cta-section">
+        <section class="cta-section snap-slide">
             <div class="container cta-card">
                 <div>
                     <p class="section-label">Regular or Direct? Choice is yours.</p>
@@ -95,9 +78,28 @@ import { ButtonLink } from '../components/ui/button';
                 </div>
                 <ButtonLink href="#" size="lg" className="cta-btn">See Pricing Options &rarr;</ButtonLink>
             </div>
+            <!-- Moved growth feature content from FeatureSection into CTA page -->
+            <section class="feature-section moved-feature bg-light">
+                <div class="container feature-container">
+                    <div class="feature-content">
+                        <h2>Grow wealth.</h2>
+                        <p>Scripbox helps you select the right mix of funds to grow your wealth steadily. We continuously monitor and manage your portfolio to keep it on track.</p>
+                        <ButtonLink href="#" variant="link" size="lg" className="feature-link">Start Free Planning &rarr;</ButtonLink>
+                        <div class="quote">
+                            <blockquote>
+                                "I was introduced to Scripbox by my friend and since then there is no looking back. One of the best apps for beginners who want to explore mutual funds. Simple and easy to use."
+                            </blockquote>
+                            <cite><strong>Priya Sharma</strong>, Scripbox investor</cite>
+                        </div>
+                    </div>
+                    <div class="feature-image">
+                        <img src="/imgs/Feature 1 Phone Mockup.jpg" alt="Grow wealth screen">
+                    </div>
+                </div>
+            </section>
         </section>
 
-        <section class="funds-section">
+        <section class="funds-section snap-slide">
             <div class="container">
                 <div class="section-header">
                     <div>
@@ -126,7 +128,7 @@ import { ButtonLink } from '../components/ui/button';
             </div>
         </section>
 
-        <section class="newsletter-section">
+        <section class="newsletter-section snap-slide">
             <div class="container newsletter-card">
                 <div>
                     <span>Stay informed with market insights always.</span>
@@ -151,14 +153,53 @@ import { ButtonLink } from '../components/ui/button';
     --text-light: #64748b;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: auto;
+    overscroll-behavior: contain;
+}
+
+main > .snap-slide {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+main::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .hero-section {
-    padding: 5rem 0 2rem;
+    padding: 4.5rem 0 2.5rem;
 }
 .hero-container {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     align-items: center;
-    gap: 2.5rem;
+    gap: 2.25rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+.hero-content {
+    max-width: 620px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .eyebrow {
     display: inline-flex;
@@ -170,11 +211,11 @@ import { ButtonLink } from '../components/ui/button';
 .hero-content h1 {
     font-size: clamp(3rem, 4vw, 4.5rem);
     line-height: 0.95;
-    max-width: 680px;
+    max-width: 640px;
     margin-bottom: 1.5rem;
 }
 .hero-copy {
-    max-width: 620px;
+    max-width: 600px;
     margin-bottom: 2rem;
     color: var(--text-light);
     line-height: 1.8;
@@ -188,11 +229,13 @@ import { ButtonLink } from '../components/ui/button';
 .primary-btn,
 .secondary-btn,
 .cta-btn {
-    min-width: 180px;
+    min-width: 220px;
+    padding: 1rem 1.75rem;
+    font-size: 1rem;
 }
 .hero-stats {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
     padding: 1.5rem 0 0;
     border-top: 1px solid rgba(15, 23, 42, 0.1);
@@ -202,7 +245,7 @@ import { ButtonLink } from '../components/ui/button';
     flex-direction: column;
 }
 .hero-stats strong {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 .hero-stats span {
@@ -215,9 +258,51 @@ import { ButtonLink } from '../components/ui/button';
 }
 .hero-image img {
     width: 100%;
+    max-width: 340px;
+}
+
+.feature-section.moved-feature {
+    padding: 3rem 0 0;
+    background: rgba(248, 250, 252, 0.95);
+}
+.feature-section.moved-feature .feature-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: 2rem;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+.feature-section.moved-feature .feature-content {
     max-width: 520px;
-    border-radius: 28px;
-    box-shadow: 0 40px 100px rgba(15, 23, 42, 0.12);
+    margin: 0;
+}
+.feature-section.moved-feature .feature-image {
+    display: flex;
+    justify-content: center;
+}
+.feature-section.moved-feature .feature-image img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 24px;
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+}
+.feature-section.moved-feature h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.feature-section.moved-feature p {
+    color: var(--text-light);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+}
+.feature-section.moved-feature .feature-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+.feature-section.moved-feature .quote {
+    border-left: 3px solid var(--brand-orange);
+    padding-left: 1.25rem;
 }
 
 .trust-bar {

@@ -4,7 +4,7 @@ import { ButtonLink } from './ui/button';
 const { title, description, imgSrc, imgAlt, imageSide = 'right' } = Astro.props;
 const isReversed = imageSide === 'left';
 ---
-<section class="feature-section" class:list={{ 'bg-light': true }}>
+<section class="feature-section snap-slide" class:list={{ 'bg-light': true }}>
     <div class="container feature-container" class:list={{ 'is-reversed': isReversed }}>
         <div class="feature-content">
             <h2>{title}</h2>
