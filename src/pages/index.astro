@@ -7,7 +7,7 @@ import { ButtonLink } from '../components/ui/button';
 ---
 
 
-<BaseLayout title="Scripbox - Invest in the best mutual funds">
+<BaseLayout title="Swan - Invest in the best mutual funds">
     <Header />
     
     <main>
@@ -26,13 +26,13 @@ import { ButtonLink } from '../components/ui/button';
         <section id="home" class="hero-section mx-auto max-w-7xl justify-center">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <span class="eyebrow">Get complete investment advice in Scripbox app</span>
+                    <span class="eyebrow">Get complete investment advice in Swan app</span>
                     <h1>
                         Grow wealth.<br>
                         Achieve goals.<br>
                         Invest in the best mutual funds.
                     </h1>
-                    <p class="hero-copy">Scripbox helps you invest with confidence using expert recommendations, simplified planning, and continuous tracking.</p>
+                    <p class="hero-copy">Swan helps you invest with confidence using expert recommendations, simplified planning, and continuous tracking.</p>
                     <div class="hero-actions">
                         <ButtonLink href="#" size="lg" className="primary-btn">App Store</ButtonLink>
                         <ButtonLink href="#" variant="outline" size="lg" className="secondary-btn">Play Store</ButtonLink>
@@ -53,7 +53,7 @@ import { ButtonLink } from '../components/ui/button';
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="/imgs/Hero Phone Mockup.jpg" alt="Scripbox app on a phone">
+                    <img src="/imgs/Hero Phone Mockup.jpg" alt="Swan app on a phone">
                 </div>
             </div>
         </section>
@@ -63,7 +63,7 @@ import { ButtonLink } from '../components/ui/button';
             <div class="container cards-grid">
                 <article class="card">
                     <h3>Grow wealth.</h3>
-                    <p>Clients who started investing with Scripbox have built meaningful long-term wealth through disciplined financial planning.</p>
+                    <p>Clients who started investing with Swan have built meaningful long-term wealth through disciplined financial planning.</p>
                     <ButtonLink href="#" variant="link" size="lg">Start investing &rarr;</ButtonLink>
                 </article>
                 <article class="card">
@@ -73,7 +73,7 @@ import { ButtonLink } from '../components/ui/button';
                 </article>
                 <article class="card">
                     <h3>Invest in the best funds.</h3>
-                    <p>Scripbox recommends high-quality mutual funds with strong risk-adjusted performance and long-term focus.</p>
+                    <p>Swan recommends high-quality mutual funds with strong risk-adjusted performance and long-term focus.</p>
                     <ButtonLink href="#" variant="link" size="lg">See plan options &rarr;</ButtonLink>
                 </article>
 
@@ -98,13 +98,13 @@ import { ButtonLink } from '../components/ui/button';
                 <div class="container feature-container">
                     <div class="feature-content">
                         <h2>Grow wealth.</h2>
-                        <p>Scripbox helps you select the right mix of funds to grow your wealth steadily. We continuously monitor and manage your portfolio to keep it on track.</p>
+                        <p>Swan helps you select the right mix of funds to grow your wealth steadily. We continuously monitor and manage your portfolio to keep it on track.</p>
                         <ButtonLink href="#" variant="link" size="lg" className="feature-link">Start Free Planning &rarr;</ButtonLink>
                         <div class="quote">
                             <blockquote>
-                                "I was introduced to Scripbox by my friend and since then there is no looking back. One of the best apps for beginners who want to explore mutual funds. Simple and easy to use."
+                                "I was introduced to Swan by my friend and since then there is no looking back. One of the best apps for beginners who want to explore mutual funds. Simple and easy to use."
                             </blockquote>
-                            <cite><strong>Priya Sharma</strong>, Scripbox investor</cite>
+                            <cite><strong>Priya Sharma</strong>, Swan investor</cite>
                         </div>
                     </div>
                     <div class="feature-image">
@@ -306,7 +306,7 @@ main {
 }
 .hero-image img {
     width: 100%;
-    max-width: 420px;
+    max-width: 600px;
 }
 
 .feature-section.moved-feature {
@@ -328,7 +328,7 @@ main {
 }
 .feature-section.moved-feature .feature-container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     gap: 2rem;
     align-items: center;
     max-width: 1120px;
@@ -344,26 +344,34 @@ main {
 }
 .feature-section.moved-feature .feature-image img {
     width: 100%;
-    max-width: 288px;
+    max-width: 300px;
+    height: auto;
     border-radius: 24px;
     box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
 }
 .feature-section.moved-feature h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 .feature-section.moved-feature p {
     color: var(--text-light);
     line-height: 1.75;
     margin-bottom: 1.5rem;
+    font-size: 1.25rem;
 }
 .feature-section.moved-feature .feature-link {
     display: inline-block;
     margin-bottom: 2rem;
+        font-size: 1.15rem;
+
 }
 .feature-section.moved-feature .quote {
     border-left: 3px solid var(--brand-orange);
     padding-left: 1.25rem;
+    font-size: 1.1rem;
+    margin-bottom: 4rem;
+
+
 }
 
 .trust-bar {

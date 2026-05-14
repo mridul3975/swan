@@ -4,7 +4,7 @@ import { ButtonLink } from './ui/button';
 <header class="site-header flex justify-between ">
     <div class="container nav-container flex justify-between">
         <a href="#home" class="logo">
-            <img src="public/imgs/logo.jpg" alt="Scripbox Logo">
+            <img src="/./Logo.jpg" alt="Swan Logo">
         </a>
         <nav>
             <ul>
@@ -25,15 +25,21 @@ import { ButtonLink } from './ui/button';
         border-bottom: 1px solid var(--border-color);
     }
     .nav-container {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
+        gap: 1rem;
     }
     .logo img {
         height: 6rem;
     }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
     nav ul {
         display: flex;
+        justify-content: center;
         gap: 2.5rem;
         list-style: none;
     }
