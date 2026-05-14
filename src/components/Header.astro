@@ -1,22 +1,20 @@
 ---
 import { ButtonLink } from './ui/button';
 ---
-<header>
-    <div class="container nav-container">
+<header class="site-header flex justify-between ">
+    <div class="container nav-container flex justify-between">
         <a href="/" class="logo">
             <img src="public/imgs/logo.jpg" alt="Scripbox Logo">
         </a>
         <nav>
             <ul>
-                <li><a href="#">Products</a></li>
+                <li><a href="#">Home</a></li>
                 <li><a href="#">Learn</a></li>
-                <li><a href="#">Resources</a></li>
                 <li><a href="#">About Us</a></li>
             </ul>
         </nav>
         <div class="actions">
-            <ButtonLink href="#" variant="ghost" size="sm">Login</ButtonLink>
-            <ButtonLink href="#" variant="default" size="sm">Sign Up</ButtonLink>
+            <ButtonLink href="#" variant="ghost" size="sm">Contact Us</ButtonLink>
         </div>
     </div>
 </header>
@@ -32,7 +30,7 @@ import { ButtonLink } from './ui/button';
         align-items: center;
     }
     .logo img {
-        height: 28px;
+        height: 6rem;
     }
     nav ul {
         display: flex;
@@ -40,7 +38,7 @@ import { ButtonLink } from './ui/button';
         list-style: none;
     }
     nav a {
-        font-size: 0.95rem;
+        font-size: 1.2rem;
         color: var(--text-light);
         font-weight: 500;
         transition: color 0.3s ease;
@@ -51,7 +49,7 @@ import { ButtonLink } from './ui/button';
     .actions {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
     }
     /* Simple responsive for nav - a full hamburger menu is more complex */
     @media (max-width: 992px) {

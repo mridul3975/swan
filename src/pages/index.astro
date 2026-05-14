@@ -11,8 +11,19 @@ import { ButtonLink } from '../components/ui/button';
     <Header />
     
     <main>
+        <svg style="display: none;" aria-hidden="true">
+            <filter id="grain-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+                <feColorMatrix type="saturate" values="0" />
+                <feComponentTransfer>
+                    <feFuncR type="linear" slope="0.5" />
+                    <feFuncG type="linear" slope="0.5" />
+                    <feFuncB type="linear" slope="0.5" />
+                </feComponentTransfer>
+            </filter>
+        </svg>
         <!-- HERO SECTION -->
-        <section class="hero-section snap-slide mx-auto max-w-7xl justify-center">
+        <section class="hero-section mx-auto max-w-7xl justify-center">
             <div class="container hero-container">
                 <div class="hero-content">
                     <span class="eyebrow">Get complete investment advice in Scripbox app</span>
@@ -48,7 +59,7 @@ import { ButtonLink } from '../components/ui/button';
         </section>
 
 
-        <section class="feature-cards snap-slide">
+        <section class="feature-cards">
             <div class="container cards-grid">
                 <article class="card">
                     <h3>Grow wealth.</h3>
@@ -65,21 +76,25 @@ import { ButtonLink } from '../components/ui/button';
                     <p>Scripbox recommends high-quality mutual funds with strong risk-adjusted performance and long-term focus.</p>
                     <ButtonLink href="#" variant="link" size="lg">See plan options &rarr;</ButtonLink>
                 </article>
+
+
             </div>
-        </section>
 
-        <!-- FeatureSection removed here; moved into CTA section -->
-
-        <section class="cta-section snap-slide">
-            <div class="container cta-card">
+                        <div class="container cta-card">
                 <div>
                     <p class="section-label">Regular or Direct? Choice is yours.</p>
                     <h2>Build wealth with expert mutual fund planning.</h2>
                 </div>
                 <ButtonLink href="#" size="lg" className="cta-btn">See Pricing Options &rarr;</ButtonLink>
             </div>
+        </section>
+
+        <!-- FeatureSection removed here; moved into CTA section -->
+
+        <section class="cta-section">
+
             <!-- Moved growth feature content from FeatureSection into CTA page -->
-            <section class="feature-section moved-feature bg-light">
+            <section class="feature-section moved-feature grain-background">
                 <div class="container feature-container">
                     <div class="feature-content">
                         <h2>Grow wealth.</h2>
@@ -99,7 +114,7 @@ import { ButtonLink } from '../components/ui/button';
             </section>
         </section>
 
-        <section class="funds-section snap-slide">
+        <section class="funds-section">
             <div class="container">
                 <div class="section-header">
                     <div>
@@ -128,7 +143,7 @@ import { ButtonLink } from '../components/ui/button';
             </div>
         </section>
 
-        <section class="newsletter-section snap-slide">
+        <section class="newsletter-section">
             <div class="container newsletter-card">
                 <div>
                     <span>Stay informed with market insights always.</span>
@@ -159,18 +174,18 @@ body {
     margin: 0;
 }
 
-main {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: auto;
-    overscroll-behavior: contain;
+.container {
+    width: min(100%, 80rem);
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-main > .snap-slide {
+main {
     min-height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    overflow: visible;
+    scroll-behavior: auto;
+    overscroll-behavior: contain;
 }
 
 main::-webkit-scrollbar {
@@ -258,12 +273,25 @@ main {
 }
 .hero-image img {
     width: 100%;
-    max-width: 340px;
+    max-width: 420px;
 }
 
 .feature-section.moved-feature {
     padding: 3rem 0 0;
     background: rgba(248, 250, 252, 0.95);
+    position: relative;
+    overflow: hidden;
+}
+.feature-section.moved-feature.grain-background {
+    background-color: var(--bg-light);
+}
+.feature-section.moved-feature.grain-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    filter: url(#grain-filter);
+    opacity: 0.15;
+    pointer-events: none;
 }
 .feature-section.moved-feature .feature-container {
     display: grid;
@@ -327,6 +355,8 @@ main {
 
 .feature-cards {
     padding: 4rem 0;
+    display: grid;
+    gap: 2rem;
 }
 .cards-grid {
     display: grid;
