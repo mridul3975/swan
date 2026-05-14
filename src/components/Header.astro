@@ -1,11 +1,12 @@
 ---
 import { ButtonLink } from './ui/button';
 ---
-<header class="site-header flex justify-between ">
-    <div class="container nav-container flex justify-between">
-        <a href="#home" class="logo">
+<header class="site-header flex justify-center gap-2">
+            <a href="#home" class="logo">
             <img src="/logo.jpg" alt="Swan Logo">
         </a>
+    <div class="container nav-container flex justify-center items-center gap-4">
+        <a></a>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -13,9 +14,12 @@ import { ButtonLink } from './ui/button';
                 <li><a href="#about">About Us</a></li>
             </ul>
         </nav>
+        <nav>
         <div class="actions">
             <ButtonLink href="#newsletter" variant="ghost" size="sm">Contact Us</ButtonLink>
         </div>
+        </nav>
+ 
     </div>
 </header>
 
@@ -36,6 +40,7 @@ import { ButtonLink } from './ui/button';
     nav {
         display: flex;
         justify-content: center;
+        gap: 1rem;
     }
     nav ul {
         display: flex;
@@ -50,12 +55,28 @@ import { ButtonLink } from './ui/button';
         transition: color 0.3s ease;
     }
     nav a:hover {
-        color: var(--brand-orange);
+        color: var(--color-gray-600);
     }
+    
     .actions {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        padding-right: 1rem;
+    }
+    .actions a,
+    .actions button {
+        background: var(--brand-orange);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.85rem 1.25rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .actions a:hover,
+    .actions button:hover {
+        opacity: 0.95;
     }
     /* Simple responsive for nav - a full hamburger menu is more complex */
     @media (max-width: 992px) {
@@ -79,6 +100,7 @@ import { ButtonLink } from './ui/button';
             justify-content: center;
             width: 100%;
             margin-top: 1rem;
+            
         }
     }
 </style>
