@@ -499,6 +499,27 @@ main {
     box-shadow: 0 30px 60px rgba(2,6,23,0.12);
 }
 
+/* Dim orange hover for all cards */
+.card,
+.fund-card,
+.cta-card,
+.newsletter-card {
+    transition: background-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+.card:hover,
+.fund-card:hover,
+.cta-card:hover,
+.newsletter-card:hover {
+    background-color: rgba(249,115,22,0.06); /* dim orange */
+    border-color: rgba(249,115,22,0.12);
+}
+
+/* Use dim green for fund cards specifically */
+.fund-card:hover {
+    background-color: rgba(5,150,105,0.06); /* dim green */
+    border-color: rgba(5,150,105,0.12);
+}
+
 .newsletter-section {
     padding: 4rem 0 6rem;
 }
