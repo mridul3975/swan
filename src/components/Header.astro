@@ -6,8 +6,7 @@ import { ButtonLink } from './ui/button';
             <a href="#home" class="logo">
                 <img src="/logo.jpg" alt="Swan Logo" />
             </a>
-    <div class="container nav-container flex justify-center items-center gap-4">
-        <a></a>
+    <div class="container nav-container">
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -16,11 +15,11 @@ import { ButtonLink } from './ui/button';
             </ul>
         </nav>
         <nav>
-        <div class="actions">
-            <div>
-                <ButtonLink href="#newsletter" variant="ghost" size="sm">Contact Us</ButtonLink>
+            <div class="actions">
+                <div>
+                    <ButtonLink href="#newsletter" variant="ghost" size="sm">Contact Us</ButtonLink>
+                </div>
             </div>
-        </div>
         </nav>
  
     </div>
@@ -83,13 +82,20 @@ import { ButtonLink } from './ui/button';
     }
     /* Simple responsive for nav - a full hamburger menu is more complex */
     @media (max-width: 992px) {
+        header {
+            flex-direction: column;
+            align-items: center;
+        }
         .nav-container {
             grid-template-columns: 1fr;
             justify-items: center;
             text-align: center;
+            gap: 0;
+            width: 100%;
         }
         nav {
-            display: block;
+            display: flex;
+            justify-content: center;
             width: 100%;
         }
         nav ul {
@@ -98,12 +104,20 @@ import { ButtonLink } from './ui/button';
             align-items: center;
             justify-content: center;
             margin: 1rem 0 0;
+            width: auto;
+        }
+        nav ul li {
+            width: auto;
+        }
+        nav ul li a {
+            display: inline-block;
+            width: auto;
+            text-align: center;
         }
         .actions {
             justify-content: center;
             width: 100%;
             margin-top: 1rem;
-            
         }
     }
 </style>
