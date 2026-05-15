@@ -131,3 +131,15 @@
     @apply font-sans;
     }
 }
+
+/* Add hover scale effect for cards */
+.card:hover {
+  transform: scale(1.08);
+  transition: transform 0.1s ease;
+}
+
+/* Add hover scale effect for the See Pricing Options button */
+.cta-btn:hover {
+  transform: scale(1.08);
+  transition: transform 0.1s ease;
+}

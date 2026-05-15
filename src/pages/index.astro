@@ -1,5 +1,4 @@
 ---
-// src/pages/index.astro
 import BaseLayout from '../components/BaseLayout.astro';
 import FeatureSection from '../components/FeatureSection.astro';
 import Header from '../components/Header.astro';
@@ -27,7 +26,7 @@ import { ButtonLink } from '../components/ui/button';
             <div class="container hero-container">
                 <div class="hero-content">
                     <span class="eyebrow">Get complete investment advice in Swan </span>
-                    <h1>
+                    <h1 class="heading-underline">
                         Grow wealth.<br>
                         Achieve goals.<br>
                         Invest in the best mutual funds.
@@ -62,17 +61,17 @@ import { ButtonLink } from '../components/ui/button';
         <section id="learn" class="feature-cards">
             <div class="container cards-grid">
                 <article class="card">
-                    <h3>Grow wealth.</h3>
+                    <h3 class="heading-underline">Grow wealth.</h3>
                     <p>Clients who started investing with Swan have built meaningful long-term wealth through disciplined financial planning.</p>
                     <ButtonLink href="#" variant="link" size="lg">Start investing &rarr;</ButtonLink>
                 </article>
                 <article class="card">
-                    <h3>Achieve goals.</h3>
+                    <h3 class="heading-underline">Achieve goals.</h3>
                     <p>Create a plan for your family’s future with personalised recommendations, goal tracking, and clear next steps.</p>
                     <ButtonLink href="#" variant="link" size="lg">Get personalised plan &rarr;</ButtonLink>
                 </article>
                 <article class="card">
-                    <h3>Invest in the best funds.</h3>
+                    <h3 class="heading-underline">Invest in the best funds.</h3>
                     <p>Swan recommends high-quality mutual funds with strong risk-adjusted performance and long-term focus.</p>
                     <ButtonLink href="#" variant="link" size="lg">See plan options &rarr;</ButtonLink>
                 </article>
@@ -83,7 +82,7 @@ import { ButtonLink } from '../components/ui/button';
                         <div class="container cta-card">
                 <div>
                     <p class="section-label">Regular or Direct? Choice is yours.</p>
-                    <h2>Build wealth with expert mutual fund planning.</h2>
+                    <h2 class="heading-underline">Build wealth with expert mutual fund planning.</h2>
                 </div>
                 <ButtonLink href="#" size="lg" className="cta-btn">See Pricing Options &rarr;</ButtonLink>
             </div>
@@ -97,7 +96,7 @@ import { ButtonLink } from '../components/ui/button';
             <section class="feature-section moved-feature grain-background">
                 <div class="container feature-container">
                     <div class="feature-content">
-                        <h2>Grow wealth.</h2>
+                        <h2 class="heading-underline">Grow wealth.</h2>
                         <p>Swan helps you select the right mix of funds to grow your wealth steadily. We continuously monitor and manage your portfolio to keep it on track.</p>
                         <ButtonLink href="#" variant="link" size="lg" className="feature-link">Start Free Planning &rarr;</ButtonLink>
                         <div class="quote">
@@ -119,7 +118,7 @@ import { ButtonLink } from '../components/ui/button';
                 <div class="section-header">
                     <div>
                         <span>Best Mutual Funds</span>
-                        <h2>Create wealth by investing in mutual funds.</h2>
+                        <h2 class="heading-underline">Create wealth by investing in mutual funds.</h2>
                     </div>
                     <ButtonLink href="#" variant="outline" size="lg">Start investing &rarr;</ButtonLink>
                 </div>
@@ -147,7 +146,7 @@ import { ButtonLink } from '../components/ui/button';
             <div class="container newsletter-card">
                 <div>
                     <span>Stay informed with market insights always.</span>
-                    <h2>Subscribe and follow us if you haven’t already.</h2>
+                    <h2 class="heading-underline">Subscribe and follow us if you haven’t already.</h2>
                 </div>
                 <div class="newsletter-actions">
                     <input type="email" placeholder="Enter email address" aria-label="Email address" />
@@ -434,16 +433,22 @@ main {
     color: var(--brand-orange);
     margin-bottom: 0.75rem;
 }
-.cta-card h2 {
-    font-size: 2rem;
-    max-width: 680px;
-    margin: 0;
-}
-
-.funds-section {
-    padding: 4rem 0;
-    background: var(--bg-light);
-}
+    .heading-underline {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.6rem;
+    }
+    .heading-underline::after {
+        content: none;
+        background-image: none;
+    }
+    .heading-underline:hover::after {
+        opacity: 1;
+    }
+    .funds-section {
+        padding: 4rem 0;
+        background: var(--bg-light);
+    }
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -484,6 +489,16 @@ main {
     color: var(--brand-green);
 }
 
+/* Hover scale for fund cards */
+.fund-card {
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    will-change: transform;
+}
+.fund-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(2,6,23,0.12);
+}
+
 .newsletter-section {
     padding: 4rem 0 6rem;
 }
@@ -521,6 +536,17 @@ main {
     border-radius: 12px;
     padding: 1rem 1.25rem;
     font-size: 1rem;
+}
+
+/* Hover scale for subscribe button inside newsletter actions */
+.newsletter-actions a,
+.newsletter-actions button {
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.newsletter-actions a:hover,
+.newsletter-actions button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 18px 36px rgba(2,6,23,0.12);
 }
 
 .site-footer {
