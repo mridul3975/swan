@@ -4,34 +4,22 @@ import { ButtonLink } from './ui/button';
 ---
 <header class="site-header flex justify-center gap-2">
             <a href="#home" class="logo">
-                <motion.img
-                    client:idle
-                    src="/logo.jpg"
-                    alt="Swan Logo"
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.1, ease: "easeInOut" }}
-                />
+                <img src="/logo.jpg" alt="Swan Logo" />
             </a>
     <div class="container nav-container flex justify-center items-center gap-4">
         <a></a>
         <nav>
             <ul>
-                <motion.li client:idle whileHover={{ rotate: 30 }} transition={{ duration: 0.09, ease: "easeInOut" }}>
-                    <a href="#home">Home</a>
-                </motion.li>
-                <motion.li client:idle whileHover={{ rotate: 30 }} transition={{ duration: 0.09, ease: "easeInOut" }}>
-                    <a href="#learn">Learn</a>
-                </motion.li>
-                <motion.li client:idle whileHover={{ rotate: 30 }} transition={{ duration: 0.09, ease: "easeInOut" }}>
-                    <a href="#about">About Us</a>
-                </motion.li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#about">About Us</a></li>
             </ul>
         </nav>
         <nav>
         <div class="actions">
-            <motion.div client:idle whileHover={{ scale: 1.02 }} transition={{ duration: 0.1, ease: "easeInOut" }}>
+            <div>
                 <ButtonLink href="#newsletter" variant="ghost" size="sm">Contact Us</ButtonLink>
-            </motion.div>
+            </div>
         </div>
         </nav>
  

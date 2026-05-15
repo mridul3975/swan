@@ -132,14 +132,21 @@
     }
 }
 
-/* Add hover scale effect for cards */
+/* Remove hover scaling — use color/background transitions only */
+.card {
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
 .card:hover {
-  transform: scale(1.08);
-  transition: transform 0.1s ease;
+  /* visual change only — no transform */
+  background-color: rgba(249,115,22,0.04);
+  border-color: rgba(249,115,22,0.08);
 }
 
-/* Add hover scale effect for the See Pricing Options button */
+/* CTA button: color transition only */
+.cta-btn {
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
 .cta-btn:hover {
-  transform: scale(1.08);
-  transition: transform 0.1s ease;
+  /* no scale */
+  background-color: rgba(249,115,22,0.12);
 }
